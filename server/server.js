@@ -4,10 +4,17 @@ import Express from 'express';
 const app = Express();
 
 // add a route that delays response for 3 minutes
-app.get('/teeest', (req, res) => {
+app.get('/timeout', (req, res) => {
   setTimeout(() => {
     res.send('done');
   }, 5000)
+});
+
+// add a route that delays response for 3 minutes
+app.get('/notimeout', (req, res) => {
+  setTimeout(() => {
+    res.send('done');
+  }, 3000)
 });
 
 
